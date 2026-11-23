@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Puzzle</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: Arial, sans-serif;
+    }
+
+    .puzzle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      min-height: 300px;
+      border: 3px solid #6d2d5c;
+      border-radius: 12px;
+    }
+
+    .puzzle-piece {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+    }
+
+    .faulty-piece {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>My Name: Jordan</h1>
+    <h2>Puzzle: Flexbox Froggy</h2>
+
+    <section class="puzzle" aria-label="Solved Flexbox Froggy puzzle">
+      <img class="puzzle-piece" src="images/frog.svg" alt="Puzzle piece 1">
+      <img class="puzzle-piece" src="images/frog.svg" alt="Puzzle piece 2">
+      <img class="faulty-piece" src="images/frog.svg" alt="Faulty hidden puzzle piece">
+    </section>
+
+    <p><strong>Date completed:</strong> <time id="completed-date"></time></p>
+  </main>
+
+  <script>
+    document.querySelector("#completed-date").textContent =
+      new Date().toLocaleDateString();
+  </script>
+</body>
+</html>
